@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O mnie - Filip</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <header>
+        <h1><marquee>Hi, I'm Filip</marquee></h1>
+        <img src="12.jpg" alt="Moje zdjęcie" class="profilowe" id="prf">
+    </header>
+    
+    <section>
+        <h2>A little about me</h2>
+        <p>My name is Filip and I live in a small village called Poklatki.<br>
+            I have a little Yorkie named Tofik and a turtle (I also have a sister, but this isn't about her).</p>
+            <p>I'm currently in the 4th grade at Technikum No. 19 in Dębiec, Poznań. I plan to become a server administrator, but there's still a long way to go.</p>
+            <p>In the meantime, I'm studying to become a lifeguard.</p>
+            
+    </section>
+
+    <section>
+        <h2>My hobbies</h2>
+        <p>In my free time, I enjoy outdoor activities like running, swimming, canoeing, etc. 
+            <br>I also like spending time with my friends and playing video games.</p>            
+        <div>
+            <img src="23.jpg" alt="Zdjęcie 1" style="width: 100px; border-radius: 10px; margin-right: 10px;">
+            <img src="15.jpg" alt="Zdjęcie 2" style="width: 100px; border-radius: 10px; margin-right: 10px;">
+            <img src="14.jpg" alt="Zdjęcie 4" style="width: 100px; border-radius: 10px;">
+            <img src="13.jpg" alt="Zdjęcie 5" style="width: 100px; border-radius: 10px;">
+            <img src="18.jpeg" alt="Zdjęcie 6" style="width: 100px; border-radius: 10px;">
+            <img src="22.jpeg" alt="Zdjęcie 7" style="width: 100px; border-radius: 10px;">
+            <img src="2.jpg" alt="Zdjęcie 8" style="width: 100px; border-radius: 10px;">
+            <img src="24.jpg" alt="Zdjęcie 3" style="width: 100px; border-radius: 10px;">
+            <img src="6.jpg" alt="Zdjęcie 3" style="width: 100px; border-radius: 10px;">
+        </div>
+    </section>
+    
+    <section>
+        <h2>My music taste</h2>
+        <p>My favourite bands are:</p>
+        <div class="zepsulo">
+            <div>
+                <img src="bmth.jpg" alt="Bring Me The Horizon" class="zepsul-zdj">
+                <span class="zepsul">Bring Me The Horizon</span>
+            </div>
+            <div>
+                <img src="slipknot.jpg" alt="Slipknot" class="zepsul-zdj">
+                <span class="zepsul">Slipknot</span>
+            </div>
+            <div>
+                <img src="linkinpark.jpg" alt="Linkin Park" class="zepsul-zdj">
+                <span class="zepsul">Linkin Park</span>
+            </div>
+            <div>
+                <img src="architekci.jpg" alt="Architects" class="zepsul-zdj">
+                <span class="zepsul">Architects</span>
+            </div>
+            <div>
+                <img src="zlyomen.jpg" alt="Bad Omens" class="zepsul-zdj">
+                <span class="zepsul">Bad Omens</span>
+            </div>
+            <div>
+                <img src="loose.jpg" alt="Knocked Loose" class="zepsul-zdj">
+                <span class="zepsul">Knocked Loose</span>
+            </div>
+        </div>
+
+        <div class="faktyy">
+            <button class="button" onclick="s()">RandomFact</button>
+            <p id="RandomFact" style="margin-top: 10px;"></p>
+        </div>
+    </section>
+    
+    <footer>
+        <h4>Autorem strony jestem ja</h4>
+        <p>😎😎</p>
+    </footer>
+    
+    <script>
+        const Zdjecia = [
+            "25.jpg",
+            "12.jpg",
+            "7.jpg",
+        ];
+        let obecne_zdj = 0;
+        
+        document.getElementById('prf').addEventListener('click', function() {
+            obecne_zdj = (obecne_zdj + 1) % Zdjecia.length;
+            this.src = Zdjecia[obecne_zdj];
+        });
+
+        function s() {
+            const fakty = [
+                "I'm addicted to coffee",
+                "I used to dye my hair",
+                "I have the drawing ability of a 5th-grade sub-primary school student",
+                "My favorite color is purple",
+                "I used to try making music",
+            ];
+            const RandomFact = fakty[Math.floor(Math.random() * fakty.length)];
+            document.getElementById('RandomFact').textContent = RandomFact;
+        }
+    </script>
+</body>
+</html>
